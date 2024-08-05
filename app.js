@@ -6,7 +6,9 @@ const errortask =require('./middleware/error')
 require('./db/connect')
 app.use(express.static('./public'))
 app.use(express.json());
-const port = 3000;
+require('dotenv').config();
+
+const port = process.env.PORT || 3000;
 
 
 app.get('/', (req, res) => {
